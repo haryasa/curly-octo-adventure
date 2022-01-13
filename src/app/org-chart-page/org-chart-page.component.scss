@@ -1,0 +1,13 @@
+.fab-container {
+  position: absolute;
+  left: 32px;
+  top: 32px;
+
+  button {
+    background-color: rgba(44, 44, 44, 1);
+
+    &.active {
+      background-color: #3f51b5;
+    }
+  }
+}

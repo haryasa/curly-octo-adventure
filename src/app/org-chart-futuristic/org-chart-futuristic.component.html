@@ -1,0 +1,188 @@
+<div #chartContainer id="chartContainer"></div>
+
+<div class="action-buttons">
+  <button
+    (click)="chart.setExpanded('O-6164').render()"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-chevron-down"></i> Expand
+  </button>
+  <br />
+
+  <button
+    (click)="chart.setExpanded('O-6164', false).render()"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-chevron-up"></i> Collapse</button
+  ><br />
+
+  <button
+    (click)="
+      chart.addNode({
+        imageUrl:
+          'https:\/\/raw.githubusercontent.com/bumbeishvili/Assets/master/Projects/D3/Organization%20Chart/cto.jpg',
+        id: 'root child',
+        parentId: 'O-6066',
+        name: 'test',
+        progress: [25, 20, 15, 10]
+      })
+    "
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-folder-plus"></i> Add Node
+  </button>
+  <br />
+
+  <button
+    (click)="chart.removeNode('O-6067')"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-user-times"></i> remove</button
+  ><br />
+
+  <button
+    (click)="chart.fit()"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-sync"></i> fit
+  </button>
+  <br />
+
+  <button
+    (click)='swapLayout()'
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-retweet"></i> swap
+  </button>
+  <br />
+
+  <button
+    (click)="compactLayout()"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-sitemap"></i> compact
+  </button>
+  <br />
+
+<!--  <button-->
+<!--    (click)="centerActive()"-->
+<!--    class="btn btn-action-button waves-effect waves-light"-->
+<!--  >-->
+<!--    <i class="fas fa-border-none"></i> center Active-->
+<!--  </button>-->
+<!--  <br />-->
+
+  <button
+    (click)="chart.setCentered('O-6162').render()"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-compress-arrows-alt"></i> center
+  </button>
+  <br />
+
+  <button
+    (click)="chart.setHighlighted('O-6162').render()"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-highlighter"></i> mark</button
+  ><br />
+
+  <button
+    (click)="chart.setUpToTheRootHighlighted('O-6162').render().fit()"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-route"></i> mark root
+  </button>
+  <br />
+
+  <button
+    (click)="chart.clearHighlighting()"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-eraser"></i> clear mark
+  </button>
+  <br />
+
+  <button
+    (click)="chart.fullscreen(chartContainer)"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-expand"></i> fullscreen</button
+  ><br />
+
+  <button
+    (click)="chart.exportImg()"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="far fa-images"></i> export img
+  </button>
+  <br />
+
+  <button
+    (click)="chart.exportImg({ full: true })"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="far fa-images"></i> export full img
+  </button>
+  <br />
+
+  <button
+    (click)="chart.exportSvg()"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-file-download"></i> export svg
+  </button>
+  <br />
+
+  <button
+    (click)="chart.expandAll()"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-angle-double-down"></i> expand all</button
+  ><br />
+
+  <button
+    (click)="chart.collapseAll().fit()"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-angle-double-up"></i> collapse all</button
+  ><br />
+
+ <button
+    (click)="downloadPdf()"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="far fa-file-pdf"></i> export pdf
+  </button>
+  <br />
+
+  <button
+    (click)="
+      chart
+        .connections([
+          { from: 'O-6069', to: 'O-6070', label: 'Conflicts of interest' }
+        ])
+        .render()
+    "
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-project-diagram"></i> add link
+  </button>
+  <br />
+
+  <button
+    (click)="chart.zoomOut()"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-minus"></i> zoom out</button
+  ><br />
+
+  <button
+    (click)="chart.zoomIn()"
+    class="btn btn-action-button waves-effect waves-light"
+  >
+    <i class="fas fa-plus"></i> zoom in
+  </button>
+  <br />
+
+</div>

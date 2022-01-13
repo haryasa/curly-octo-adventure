@@ -1,0 +1,12 @@
+<ng-container *ngIf="chartType === 'circle'">
+  <app-org-chart-circle [data]="data"></app-org-chart-circle>
+</ng-container>
+<ng-container *ngIf="chartType === 'futuristic'">
+  <app-org-chart-futuristic [data]="data"></app-org-chart-futuristic>
+</ng-container>
+
+<div class="fab-container">
+  <button mat-fab color="primary" aria-label="Highlight interval" (click)="toggleHighlightInterval()" [class.active]="!!intervalId">
+    <mat-icon>visibility</mat-icon>
+  </button>
+</div>
